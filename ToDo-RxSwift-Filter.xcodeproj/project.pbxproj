@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		999BFB2F275C780100D2E143 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999BFB2E275C780100D2E143 /* AppDelegate.swift */; };
 		999BFB31275C780100D2E143 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999BFB30275C780100D2E143 /* SceneDelegate.swift */; };
-		999BFB33275C780100D2E143 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999BFB32275C780100D2E143 /* ViewController.swift */; };
 		999BFB36275C780100D2E143 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999BFB34275C780100D2E143 /* Main.storyboard */; };
 		999BFB38275C780500D2E143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 999BFB37275C780500D2E143 /* Assets.xcassets */; };
 		999BFB3B275C780500D2E143 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 999BFB39275C780500D2E143 /* LaunchScreen.storyboard */; };
+		999BFB44275C794600D2E143 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999BFB43275C794600D2E143 /* TaskListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		999BFB2B275C780100D2E143 /* ToDo-RxSwift-Filter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo-RxSwift-Filter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		999BFB2E275C780100D2E143 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		999BFB30275C780100D2E143 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		999BFB32275C780100D2E143 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		999BFB35275C780100D2E143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		999BFB37275C780500D2E143 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		999BFB3A275C780500D2E143 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		999BFB3C275C780500D2E143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		999BFB43275C794600D2E143 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,23 @@
 		999BFB2D275C780100D2E143 /* ToDo-RxSwift-Filter */ = {
 			isa = PBXGroup;
 			children = (
+				999BFB42275C792600D2E143 /* Controllers */,
 				999BFB2E275C780100D2E143 /* AppDelegate.swift */,
 				999BFB30275C780100D2E143 /* SceneDelegate.swift */,
-				999BFB32275C780100D2E143 /* ViewController.swift */,
 				999BFB34275C780100D2E143 /* Main.storyboard */,
 				999BFB37275C780500D2E143 /* Assets.xcassets */,
 				999BFB39275C780500D2E143 /* LaunchScreen.storyboard */,
 				999BFB3C275C780500D2E143 /* Info.plist */,
 			);
 			path = "ToDo-RxSwift-Filter";
+			sourceTree = "<group>";
+		};
+		999BFB42275C792600D2E143 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				999BFB43275C794600D2E143 /* TaskListViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +146,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				999BFB33275C780100D2E143 /* ViewController.swift in Sources */,
 				999BFB2F275C780100D2E143 /* AppDelegate.swift in Sources */,
 				999BFB31275C780100D2E143 /* SceneDelegate.swift in Sources */,
+				999BFB44275C794600D2E143 /* TaskListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
