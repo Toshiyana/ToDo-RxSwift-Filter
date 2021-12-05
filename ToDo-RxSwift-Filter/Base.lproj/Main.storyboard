@@ -24,6 +24,9 @@
                                     <segment title="Medium"/>
                                     <segment title="Low"/>
                                 </segments>
+                                <connections>
+                                    <action selector="priorityValueChangedWithSegmentedControl:" destination="BYZ-38-t0r" eventType="valueChanged" id="9od-p8-dUO"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hYP-US-m6N">
                                 <rect key="frame" x="0.0" y="157" width="414" height="705"/>
@@ -55,7 +58,13 @@
                             <constraint firstItem="hYP-US-m6N" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xwa-oi-kxo"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="GoodList" id="Khw-tm-jQs"/>
+                    <navigationItem key="navigationItem" title="GoodList" id="Khw-tm-jQs">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="JYS-j0-Xi3">
+                            <connections>
+                                <segue destination="ckx-bC-1VA" kind="presentation" id="FUM-gW-3fu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="prioritySegmentedControl" destination="Q7F-NJ-efW" id="5Nh-da-eEd"/>
                         <outlet property="tableView" destination="hYP-US-m6N" id="8LL-SO-471"/>
@@ -64,6 +73,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="81.696428571428569"/>
+        </scene>
+        <!--Add Task-->
+        <scene sceneID="XjA-6P-om9">
+            <objects>
+                <viewController id="19f-wn-dNL" customClass="AddTaskViewController" customModule="ToDo_RxSwift_Filter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="r8o-zO-QmL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pUD-ep-XRa">
+                                <rect key="frame" x="104" y="86" width="206" height="32"/>
+                                <segments>
+                                    <segment title="High"/>
+                                    <segment title="Medium"/>
+                                    <segment title="Low"/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ubP-ll-zRT">
+                                <rect key="frame" x="107" y="404" width="200" height="34"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="joC-1z-Xpr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NC7-Iz-mkk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ubP-ll-zRT" firstAttribute="centerX" secondItem="r8o-zO-QmL" secondAttribute="centerX" id="9aX-ih-oOK"/>
+                            <constraint firstItem="pUD-ep-XRa" firstAttribute="top" secondItem="NC7-Iz-mkk" secondAttribute="top" constant="30" id="EH7-IW-ty7"/>
+                            <constraint firstItem="pUD-ep-XRa" firstAttribute="centerX" secondItem="r8o-zO-QmL" secondAttribute="centerX" id="IUK-Sn-ilN"/>
+                            <constraint firstItem="ubP-ll-zRT" firstAttribute="centerY" secondItem="r8o-zO-QmL" secondAttribute="centerY" id="weq-R7-eBw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Task" id="JtD-pL-Hpm">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="UxI-Qs-vvL">
+                            <connections>
+                                <action selector="saveButtonPressed" destination="19f-wn-dNL" id="uyO-nF-tJu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="prioritySegmentedControl" destination="pUD-ep-XRa" id="Tdm-F0-tcH"/>
+                        <outlet property="taskTitleTextField" destination="ubP-ll-zRT" id="zNL-rv-Hxf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rLK-YO-YJP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2758" y="82"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Flj-cq-oMv">
@@ -83,10 +143,31 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="81.696428571428569"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="x6x-Wd-MEn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ckx-bC-1VA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Hh-Ac-T36">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="19f-wn-dNL" kind="relationship" relationship="rootViewController" id="XO6-U7-c7T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SEN-CJ-5BM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1890" y="82"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
