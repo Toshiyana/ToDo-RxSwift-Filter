@@ -28,7 +28,8 @@ class TaskListViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let navC = segue.destination as? UINavigationController,
               let addTVC = navC.viewControllers.first as? AddTaskViewController else {
-                  fatalError("Controller not found.")
+                  return
+                  // fatalError("Controller not found.")
               }
         
         addTVC.taskSubjectObservable
